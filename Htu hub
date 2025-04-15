@@ -1,0 +1,228 @@
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Htu | Blox Fruits",
+    LoadingTitle = "Htu Hub Loading...",
+    LoadingSubtitle = "by YourName",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "HtuConfig",
+        FileName = "Settings"
+    },
+    Discord = {
+        Enabled = false
+    },
+    KeySystem = false
+})
+
+local MainTab = Window:CreateTab("Main", 71813789145145)
+local PlayerTab = Window:CreateTab("Player", 71813789145145)
+local TeleportTab = Window:CreateTab("Teleport", 71813789145145)
+local ESPTab = Window:CreateTab("ESP", 71813789145145)
+local RaidTab = Window:CreateTab("Raid/Shop", 71813789145145)
+local FruitTab = Window:CreateTab("Fruits", 71813789145145)
+local ServerTab = Window:CreateTab("Server", 71813789145145)
+local TrollTab = Window:CreateTab("Troll/Fun", 71813789145145)
+local SettingsTab = Window:CreateTab("Settings", 71813789145145)
+
+_G.AutoFarmLevel = false
+function StartAutoFarmLevel()
+    spawn(function()
+        while _G.AutoFarmLevel do
+            pcall(function()
+            end)
+            wait(0.5)
+        end
+    end)
+end
+
+_G.AutoFarmBoss = false
+function StartAutoFarmBoss()
+    spawn(function()
+        while _G.AutoFarmBoss do
+            pcall(function()
+            end)
+            wait(1)
+        end
+    end)
+end
+
+_G.AutoQuest = false
+function StartAutoQuest()
+    spawn(function()
+        while _G.AutoQuest do
+            pcall(function()
+            end)
+            wait(0.5)
+        end
+    end)
+end
+
+_G.KillAura = false
+function StartKillAura()
+    spawn(function()
+        while _G.KillAura do
+            pcall(function()
+            end)
+            wait(0.1)
+        end
+    end)
+end
+
+_G.AutoStoreFruits = false
+function StartAutoStoreFruits()
+    spawn(function()
+        while _G.AutoStoreFruits do
+            pcall(function()
+            end)
+            wait(0.5)
+        end
+    end)
+end
+
+MainTab:CreateToggle({
+    Name = "Auto Farm Level",
+    CurrentValue = false,
+    Flag = "AutoFarmLevel",
+    Callback = function(Value)
+        _G.AutoFarmLevel = Value
+        if Value then
+            StartAutoFarmLevel()
+        end
+    end
+})
+
+MainTab:CreateToggle({
+    Name = "Auto Farm Boss",
+    CurrentValue = false,
+    Flag = "AutoFarmBoss",
+    Callback = function(Value)
+        _G.AutoFarmBoss = Value
+        if Value then
+            StartAutoFarmBoss()
+        end
+    end
+})
+
+MainTab:CreateToggle({
+    Name = "Auto Quest",
+    CurrentValue = false,
+    Flag = "AutoQuest",
+    Callback = function(Value)
+        _G.AutoQuest = Value
+        if Value then
+            StartAutoQuest()
+        end
+    end
+})
+
+MainTab:CreateToggle({
+    Name = "Kill Aura",
+    CurrentValue = false,
+    Flag = "KillAura",
+    Callback = function(Value)
+        _G.KillAura = Value
+        if Value then
+            StartKillAura()
+        end
+    end
+})
+
+FruitTab:CreateToggle({
+    Name = "Auto Store Fruits",
+    CurrentValue = false,
+    Flag = "AutoStoreFruits",
+    Callback = function(Value)
+        _G.AutoStoreFruits = Value
+        if Value then
+            StartAutoStoreFruits()
+        end
+    end
+})
+
+ESPTab:CreateToggle({
+    Name = "ESP Fruits",
+    CurrentValue = false,
+    Flag = "ESP_Fruits",
+    Callback = function(Value)
+    end
+})
+
+ESPTab:CreateToggle({
+    Name = "ESP Players",
+    CurrentValue = false,
+    Flag = "ESP_Players",
+    Callback = function(Value)
+    end
+})
+
+ESPTab:CreateToggle({
+    Name = "ESP Bosses",
+    CurrentValue = false,
+    Flag = "ESP_Bosses",
+    Callback = function(Value)
+    end
+})
+
+ServerTab:CreateButton({
+    Name = "Server Hop",
+    Callback = function()
+    end
+})
+
+ServerTab:CreateButton({
+    Name = "Rejoin",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId)
+    end
+})
+
+TrollTab:CreateButton({
+    Name = "Troll Players",
+    Callback = function()
+    end
+})
+
+SettingsTab:CreateButton({
+    Name = "Save Settings",
+    Callback = function()
+    end
+})
+
+SettingsTab:CreateButton({
+    Name = "Load Settings",
+    Callback = function()
+    end
+})
+
+TeleportTab:CreateButton({
+    Name = "Teleport to Jungle",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1616, 36, 146))
+    end
+})
+
+TeleportTab:CreateButton({
+    Name = "Teleport to Sky Island",
+    Callback = function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-5197, 41, 1251))
+    end
+})
+
+RaidTab:CreateButton({
+    Name = "Auto Raid",
+    Callback = function()
+    end
+})
+
+RaidTab:CreateButton({
+    Name = "Auto Sea Event",
+    Callback = function()
+    end
+})
+
+RaidTab:CreateButton({
+    Name = "Auto Yama",
+    Callback = function()
+    end
+})
